@@ -63,4 +63,48 @@ final class Php84
 
         return $firstChar . mb_substr($string, 1, null, $encoding);
     }
+
+    public static function array_find(array $array, callable $callback)
+    {
+        foreach ($array as $key => $value) {
+            if ($callback($value, $key)) {
+                return $value;
+            }
+        }
+
+        return null;
+    }
+
+    public static function array_find_key(array $array, callable $callback)
+    {
+        foreach ($array as $key => $value) {
+            if ($callback($value, $key)) {
+                return $key;
+            }
+        }
+
+        return null;
+    }
+
+    public static function array_any(array $array, callable $callback): bool
+    {
+        foreach ($array as $key => $value) {
+            if ($callback($value, $key)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static function array_all(array $array, callable $callback): bool
+    {
+        foreach ($array as $key => $value) {
+            if (!$callback($value, $key)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

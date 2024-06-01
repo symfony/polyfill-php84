@@ -4,6 +4,7 @@ Symfony Polyfill / Php84
 This component provides features added to PHP 8.4 core:
 
 - [`mb_ucfirst` and `mb_lcfirst`](https://wiki.php.net/rfc/mb_ucfirst)
+- [`array_find`, `array_find_key`, `array_any` and `array_all`](https://wiki.php.net/rfc/array_find)
 
 More information can be found in the
 [main Polyfill README](https://github.com/symfony/polyfill/blob/main/README.md).
