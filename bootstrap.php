@@ -15,7 +15,6 @@ if (\PHP_VERSION_ID >= 80400) {
     return;
 }
 
-
 if (!function_exists('mb_ucfirst')) {
     function mb_ucfirst($string, ?string $encoding = null): string { return p\Php84::mb_ucfirst($string, $encoding); }
 }
