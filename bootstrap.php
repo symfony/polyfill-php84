@@ -15,6 +15,14 @@ if (\PHP_VERSION_ID >= 80400) {
     return;
 }
 
+if (defined('CURL_VERSION_HTTP3') || PHP_VERSION_ID < 80200 && function_exists('curl_version') && curl_version()['version'] >= 0x074200) { // libcurl >= 7.66.0
+    define('CURL_HTTP_VERSION_3', 30);
+
+    if (defined('CURLOPT_SSH_HOST_PUBLIC_KEY_SHA256')) { // libcurl >= 7.80.0 (7.88 would be better but is slow to check)
+        define('CURL_HTTP_VERSION_3ONLY', 31);
+    }
+}
+
 if (!function_exists('array_find')) {
     function array_find(array $array, callable $callback) { return p\Php84::array_find($array, $callback); }
 }
