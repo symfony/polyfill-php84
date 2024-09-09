@@ -41,11 +41,11 @@ if (!function_exists('array_all')) {
 
 if (extension_loaded('mbstring')) {
     if (!function_exists('mb_ucfirst')) {
-        function mb_ucfirst($string, ?string $encoding = null): string { return p\Php84::mb_ucfirst($string, $encoding); }
+        function mb_ucfirst(string $string, ?string $encoding = null): string { return p\Php84::mb_ucfirst($string, $encoding); }
     }
 
     if (!function_exists('mb_lcfirst')) {
-        function mb_lcfirst($string, ?string $encoding = null): string { return p\Php84::mb_lcfirst($string, $encoding); }
+        function mb_lcfirst(string $string, ?string $encoding = null): string { return p\Php84::mb_lcfirst($string, $encoding); }
     }
 
     if (!function_exists('mb_trim')) {
