@@ -39,6 +39,10 @@ if (!function_exists('array_all')) {
     function array_all(array $array, callable $callback): bool { return p\Php84::array_all($array, $callback); }
 }
 
+if (!function_exists('fpow')) {
+    function fpow(float $num, float $exponent): float { return p\Php84::fpow($num, $exponent); }
+}
+
 if (extension_loaded('mbstring')) {
     if (!function_exists('mb_ucfirst')) {
         function mb_ucfirst(string $string, ?string $encoding = null): string { return p\Php84::mb_ucfirst($string, $encoding); }
